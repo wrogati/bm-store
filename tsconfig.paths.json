@@ -3,6 +3,7 @@
     "baseUrl": ".",
     "paths": {
       "@functions/*": ["src/functions/*"],
+      "@models/*": ["src/infra/database/models/*"],
       "@libs/*": ["src/libs/*"]
     }
   }
