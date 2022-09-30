@@ -1,6 +1,6 @@
 import type { AWS } from "@serverless/typescript";
 
-import hello from "@functions/hello";
+import createCustomer from "@functions/createCustomer";
 
 const serverlessConfiguration: AWS = {
   service: "bm-store",
@@ -28,7 +28,7 @@ const serverlessConfiguration: AWS = {
     },
   },
   // import the function via paths
-  functions: { hello },
+  functions: { createCustomer },
   package: {
     individually: true,
     include: [
@@ -58,6 +58,7 @@ const serverlessConfiguration: AWS = {
       useStage: false,
       schemes: ["http", "https"],
       excludeStages: ["prod"],
+      basePath: "/dev"
     },
   },
 };

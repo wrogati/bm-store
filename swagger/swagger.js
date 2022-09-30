@@ -24,6 +24,25 @@
           }
         }
       }
+    },
+    "/create-customer": {
+      "post": {
+        "summary": "createCustomer",
+        "description": "",
+        "operationId": "createCustomer.post.create-customer",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "200 response"
+          }
+        }
+      }
     }
   },
   "definitions": {
@@ -53,10 +72,9 @@
     }
   },
   "securityDefinitions": {},
+  "basePath": "/dev",
   "schemes": [
     "http",
-    "https",
-    "ws",
-    "wss"
+    "https"
   ]
 };
