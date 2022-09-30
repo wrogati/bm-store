@@ -21,6 +21,10 @@ const serverlessConfiguration: AWS = {
     environment: {
       AWS_NODEJS_CONNECTION_REUSE_ENABLED: "1",
       NODE_OPTIONS: "--enable-source-maps --stack-trace-limit=1000",
+      DB_DATABASE: "${env:DB_DATABASE}",
+      DB_USER: "${env:DB_USER}",
+      DB_PASSWORD: "${env:DB_PASSWORD}",
+      DB_HOST: "${env:DB_HOST}",
     },
   },
   // import the function via paths
