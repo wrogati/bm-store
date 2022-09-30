@@ -4,6 +4,9 @@
     "paths": {
       "@functions/*": ["src/functions/*"],
       "@models/*": ["src/infra/database/models/*"],
+      "@entities/*": ["src/entities/*"],
+      "@repositories/*": ["src/repositories/*"],
+      "@useCases/*": ["src/useCases/*"],
       "@libs/*": ["src/libs/*"]
     }
   }
