@@ -10,6 +10,7 @@ const serverlessConfiguration: AWS = {
     "serverless-esbuild",
     "serverless-offline",
   ],
+  useDotenv: true,
   provider: {
     name: "aws",
     runtime: "nodejs14.x",
@@ -24,7 +25,15 @@ const serverlessConfiguration: AWS = {
   },
   // import the function via paths
   functions: { hello },
-  package: { individually: true },
+  package: {
+    individually: true,
+    include: [
+      "./src/infra/database/models",
+      "./src/infra/database/config",
+      "./src/infra/database/migrations",
+      "./src/infra/database/seeders",
+    ],
+  },
   custom: {
     esbuild: {
       bundle: true,
