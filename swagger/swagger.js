@@ -6,30 +6,40 @@
     "version": "1"
   },
   "paths": {
-    "/hello": {
+    "/create-customer": {
       "post": {
-        "summary": "hello",
+        "summary": "createCustomer",
         "description": "",
-        "operationId": "hello.post.hello",
+        "operationId": "createCustomer.post.create-customer",
         "consumes": [
           "application/json"
         ],
         "produces": [
           "application/json"
         ],
-        "parameters": [],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Body required in the request",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/PostCreateCustomer"
+            }
+          }
+        ],
         "responses": {
-          "200": {
-            "description": "200 response"
+          "201": {
+            "description": "Creation Customer"
           }
         }
       }
     },
-    "/create-customer": {
+    "/create-product": {
       "post": {
-        "summary": "createCustomer",
+        "summary": "createProduct",
         "description": "",
-        "operationId": "createCustomer.post.create-customer",
+        "operationId": "createProduct.post.create-product",
         "consumes": [
           "application/json"
         ],
@@ -46,28 +56,28 @@
     }
   },
   "definitions": {
-    "PostBodyHello": {
+    "PostCreateCustomer": {
       "properties": {
-        "status": {
-          "title": "PostBodyHello.status",
+        "firstName": {
+          "title": "PostCreateCustomer.firstName",
           "type": "string"
         },
-        "message": {
-          "title": "PostBodyHello.message",
+        "lastName": {
+          "title": "PostCreateCustomer.lastName",
           "type": "string"
         },
-        "isOk": {
-          "title": "PostBodyHello.isOk",
-          "type": "boolean"
+        "email": {
+          "title": "PostCreateCustomer.email",
+          "type": "string"
         }
       },
       "required": [
-        "status",
-        "message",
-        "isOk"
+        "firstName",
+        "lastName",
+        "email"
       ],
       "additionalProperties": false,
-      "title": "PostBodyHello",
+      "title": "PostCreateCustomer",
       "type": "object"
     }
   },

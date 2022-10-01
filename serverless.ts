@@ -1,6 +1,7 @@
 import type { AWS } from "@serverless/typescript";
 
 import createCustomer from "@functions/createCustomer";
+import createProduct from "@functions/createProduct";
 
 const serverlessConfiguration: AWS = {
   service: "bm-store",
@@ -28,7 +29,7 @@ const serverlessConfiguration: AWS = {
     },
   },
   // import the function via paths
-  functions: { createCustomer },
+  functions: { createCustomer, createProduct },
   package: {
     individually: true,
     include: [

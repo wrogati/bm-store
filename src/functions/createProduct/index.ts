@@ -7,16 +7,10 @@ export default {
     {
       http: {
         method: "post",
-        path: "create-customer",
+        path: "create-product",
         request: {
           schemas: {
             "application/json": schema,
-          },
-        },
-        bodyType: "PostCreateCustomer",
-        responseData: {
-          201: {
-            description: "Creation Customer",
           },
         },
       },

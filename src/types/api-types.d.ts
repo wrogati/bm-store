@@ -1,5 +1,6 @@
-export interface PostBodyHello {
-    status: string;
-    message: string;
-    isOk: boolean;
-  }
+export interface PostCreateCustomer {
+  firstName: string;
+  lastName: string;
+  email: string;
+}
+
