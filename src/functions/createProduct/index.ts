@@ -13,6 +13,12 @@ export default {
             "application/json": schema,
           },
         },
+        bodyType: "PostCreateProduct",
+        responseData: {
+          201: {
+            description: "Create Product",
+          },
+        },
       },
     },
   ],

@@ -3,7 +3,6 @@ import { formatJSONResponse } from "@libs/api-gateway";
 import { middyfy } from "@libs/lambda";
 import schema from "./schema";
 import CreateProductUseCase from "@useCases/createProduct/CreateProductUseCase";
-// import customerRequest from "@useCases/createCustomer/validations";
 
 const createPrtoduct: ValidatedEventAPIGatewayProxyEvent<
   typeof schema
@@ -36,7 +35,7 @@ const createPrtoduct: ValidatedEventAPIGatewayProxyEvent<
   }
 
   return formatJSONResponse(201, {
-    message: `Customer Created successfully!`,
+    message: `${String(event.body.type).toUpperCase} Created successfully!`,
   });
 };
 

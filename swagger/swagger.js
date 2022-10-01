@@ -46,10 +46,20 @@
         "produces": [
           "application/json"
         ],
-        "parameters": [],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Body required in the request",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/PostCreateProduct"
+            }
+          }
+        ],
         "responses": {
-          "200": {
-            "description": "200 response"
+          "201": {
+            "description": "Create Product"
           }
         }
       }
@@ -78,6 +88,43 @@
       ],
       "additionalProperties": false,
       "title": "PostCreateCustomer",
+      "type": "object"
+    },
+    "PostCreateProduct": {
+      "properties": {
+        "title": {
+          "title": "PostCreateProduct.title",
+          "type": "string"
+        },
+        "type": {
+          "title": "PostCreateProduct.type",
+          "type": "string"
+        },
+        "salePrice": {
+          "title": "PostCreateProduct.salePrice",
+          "type": "number"
+        },
+        "rentPrice": {
+          "title": "PostCreateProduct.rentPrice",
+          "type": "number"
+        },
+        "daysForRent": {
+          "title": "PostCreateProduct.daysForRent",
+          "type": "number"
+        },
+        "typeOfSale": {
+          "title": "PostCreateProduct.typeOfSale",
+          "type": "string"
+        }
+      },
+      "required": [
+        "title",
+        "type",
+        "salePrice",
+        "typeOfSale"
+      ],
+      "additionalProperties": false,
+      "title": "PostCreateProduct",
       "type": "object"
     }
   },
