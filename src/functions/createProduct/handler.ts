@@ -15,17 +15,6 @@ const createPrtoduct: ValidatedEventAPIGatewayProxyEvent<
     typeOfSale: event.body.typeOfSale,
   };
 
-  // const { error } = customerRequest.validate(payload, { abortEarly: false });
-
-  // if (error) {
-  //   const errorMessages = error.details.map((i) => i.message);
-
-  //   //TODO :: Improve error messages format
-  //   return formatJSONResponse(422, {
-  //     message: errorMessages,
-  //   });
-  // }
-
   try {
     await CreateProductUseCase.execute(payload);
   } catch (error) {
@@ -35,7 +24,7 @@ const createPrtoduct: ValidatedEventAPIGatewayProxyEvent<
   }
 
   return formatJSONResponse(201, {
-    message: `${String(event.body.type).toUpperCase} Created successfully!`,
+    message: `Product Created successfully!`,
   });
 };
 
