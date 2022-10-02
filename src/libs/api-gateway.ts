@@ -16,6 +16,11 @@ export type ValidatedEventAPIGatewayProxyEvent<S> = Handler<
   APIGatewayProxyResult
 >;
 
+const headers = {
+  "Access-Control-Allow-Origin": "*",
+  "Access-Control-Allow-Credentials": true,
+};
+
 export const formatJSONResponse = (
   statusCode: number,
   response: Record<string, unknown>
@@ -23,15 +28,15 @@ export const formatJSONResponse = (
   return {
     statusCode: statusCode,
     body: JSON.stringify(response),
+    headers
   };
 };
 
-export const formatJSONResponseOK = (
-  response: Record<string, unknown>
-) => {
+export const formatJSONResponseOK = (response: Record<string, unknown>) => {
   return {
     statusCode: HTTP_STATUS_CODE.OK,
     body: JSON.stringify(response),
+    headers
   };
 };
 
@@ -41,6 +46,7 @@ export const formatJSONResponseCreated = (
   return {
     statusCode: HTTP_STATUS_CODE.CREATED,
     body: JSON.stringify(response),
+    headers
   };
 };
 
@@ -48,6 +54,7 @@ export const formatJSONResponseDestroyed = () => {
   return {
     statusCode: HTTP_STATUS_CODE.NO_CONTENT,
     body: {},
+    headers
   };
 };
 
@@ -56,6 +63,7 @@ export const formatJSONResponseError = (error) => {
 
   return {
     statusCode: errorHandler.getCode(),
-    body: JSON.stringify(errorHandler.getBody())
+    body: JSON.stringify(errorHandler.getBody()),
+    headers
   };
 };
