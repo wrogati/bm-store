@@ -1,4 +1,4 @@
-const axios = require("axios");
+import axios from "axios";
 
 test("Should create a new Product Movie for rent", async () => {
   const response = await axios.post(
@@ -31,14 +31,32 @@ test("Should create a new Product Movie for sale", async () => {
 });
 
 test("Should create a new Product Movie for sale and rent", async () => {
+  try {
+    const response = await axios.post(
+      `http://localhost:3000/dev/create-product`,
+      {
+        title: "Star Wars - O império contra ataca",
+        type: "MOVIE",
+        typeOfSale: "both",
+        rentPrice: 10,
+        salePrice: 60
+      }
+    );
+  
+    expect(response.status).toBe(201);
+  } catch (error) {
+    console.log('error', error.message)
+  }
+
+});
+
+test("Should create a new Product Book", async () => {
   const response = await axios.post(
     `http://localhost:3000/dev/create-product`,
     {
-      title: "Star Wars - O império contra ataca",
-      type: "MOVIE",
-      typeOfSale: "both",
-      rentPrice: 10,
-      salePrice: 60
+      title: "Harry Potter",
+      type: "BOOK",
+      salePrice: 80
     }
   );
 
