@@ -16,7 +16,10 @@ export default {
         bodyType: "PostCreateCustomer",
         responseData: {
           201: {
-            description: "Creation Customer",
+            description: "Product created",
+          },
+          422: {
+            description: "Validation Error",
           },
         },
       },
