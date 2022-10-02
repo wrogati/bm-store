@@ -1,0 +1,9 @@
+export enum HTTP_STATUS_CODE {
+    OK = 201,
+    CREATED = 201,
+    NO_CONTENT = 204,
+    BAD_REQUEST = 400,
+    UNPROCESSABLE_ENTITY = 422,
+    SERVER_ERROR = 500,
+    BAD_GATEWAY = 502
+}
