@@ -21,7 +21,6 @@ const createProduct: ValidatedEventAPIGatewayProxyEvent<typeof schema> = async (
   try {
     await CreateProductUseCase.execute(payload);
   } catch (error) {
-    console.log('sdfsdfsdf', error)
     return formatJSONResponseError(error);
   }
 
