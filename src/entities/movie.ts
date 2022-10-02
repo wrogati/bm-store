@@ -14,14 +14,6 @@ export class Movie extends Product {
   constructor(props) {
     super();
     Object.assign(this, props);
-    if (this.daysForRent) {
-      this.setRentPrice();
-    }
     this.type = ProductType.movie;
-  }
-
-  private setRentPrice() {
-    let calcTenPercent = 0.1 * this.rentPrice;
-    this.rentPrice = this.rentPrice + calcTenPercent * this.daysForRent;
   }
 }

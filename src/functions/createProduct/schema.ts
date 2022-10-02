@@ -7,5 +7,5 @@ export default {
     rentPrice: { type: 'number' },
     salePrice: { type: 'number' },
   },
-  required: ['title', 'type', 'typeOfSale']
+  required: ['title', 'type']
 } as const;

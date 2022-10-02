@@ -13,5 +13,6 @@ export class Book extends Product {
     super();
     Object.assign(this, props);
     this.type = ProductType.book;
+    this.typeOfSale = TypeOfSale.sale;
   }
 }
