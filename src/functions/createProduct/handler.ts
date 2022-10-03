@@ -1,6 +1,6 @@
 import {
+  formatJSONResponseCreated,
   formatJSONResponseError,
-  formatJSONResponseOK,
   ValidatedEventAPIGatewayProxyEvent,
 } from "@libs/api-gateway";
 import { middyfy } from "@libs/lambda";
@@ -24,7 +24,7 @@ const createProduct: ValidatedEventAPIGatewayProxyEvent<typeof schema> = async (
     return formatJSONResponseError(error);
   }
 
-  return formatJSONResponseOK({
+  return formatJSONResponseCreated({
     message: `Product Created successfully!`,
   });
 };

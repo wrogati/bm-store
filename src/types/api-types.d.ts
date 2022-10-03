@@ -12,3 +12,8 @@ export interface PostCreateProduct {
   daysForRent?: number;
   typeOfSale: string;
 }
+
+export interface PostSaleProduct {
+  customerId: number;
+  items: [];
+}

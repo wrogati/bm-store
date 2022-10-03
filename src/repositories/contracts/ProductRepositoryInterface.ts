@@ -1,5 +1,4 @@
-import { Product } from "@entities/product";
-
 export interface ProductRepositoryInterface {
-    save(data: Product): Promise<void>;
+  find(productId: number): Promise<any>;
+  findWhere(type: string, title: string): Promise<any>;
 }

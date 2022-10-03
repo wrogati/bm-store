@@ -2,6 +2,8 @@ import type { AWS } from "@serverless/typescript";
 
 import createCustomer from "@functions/createCustomer";
 import createProduct from "@functions/createProduct";
+import saleProduct from "@functions/saleProduct";
+import findProduct from "@functions/findProduct";
 
 const serverlessConfiguration: AWS = {
   service: "bm-store",
@@ -29,7 +31,7 @@ const serverlessConfiguration: AWS = {
     },
   },
   // import the function via paths
-  functions: { createCustomer, createProduct },
+  functions: { createCustomer, createProduct, saleProduct, findProduct },
   package: {
     individually: true,
     include: [
@@ -59,7 +61,7 @@ const serverlessConfiguration: AWS = {
       useStage: false,
       schemes: ["http", "https"],
       excludeStages: ["prod"],
-      basePath: "/dev"
+      basePath: "/dev",
     },
   },
 };
