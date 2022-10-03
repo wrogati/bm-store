@@ -6,6 +6,8 @@ import saleProduct from "@functions/saleProduct";
 import findProduct from "@functions/findProduct";
 
 const serverlessConfiguration: AWS = {
+  org: "wrogati",
+  app: "bm-store",
   service: "bm-store",
   frameworkVersion: "3",
   plugins: [
