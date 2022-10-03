@@ -30,7 +30,10 @@
         ],
         "responses": {
           "201": {
-            "description": "Creation Customer"
+            "description": "Product created"
+          },
+          "422": {
+            "description": "Validation Error"
           }
         }
       }
@@ -59,7 +62,64 @@
         ],
         "responses": {
           "201": {
-            "description": "Create Product"
+            "description": "Product created"
+          },
+          "422": {
+            "description": "Validation Error"
+          }
+        }
+      }
+    },
+    "/sale-product": {
+      "post": {
+        "summary": "saleProduct",
+        "description": "",
+        "operationId": "saleProduct.post.sale-product",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Body required in the request",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/PostSaleProduct"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Sale created"
+          },
+          "422": {
+            "description": "Validation Error"
+          }
+        }
+      }
+    },
+    "/find-product": {
+      "get": {
+        "summary": "findProduct",
+        "description": "",
+        "operationId": "findProduct.get.find-product",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "200 response"
+          },
+          "422": {
+            "description": "Validation Error"
           }
         }
       }
@@ -125,6 +185,28 @@
       ],
       "additionalProperties": false,
       "title": "PostCreateProduct",
+      "type": "object"
+    },
+    "PostSaleProduct": {
+      "properties": {
+        "customerId": {
+          "title": "PostSaleProduct.customerId",
+          "type": "number"
+        },
+        "items": {
+          "items": [],
+          "additionalItems": false,
+          "minItems": 0,
+          "title": "PostSaleProduct.items",
+          "type": "array"
+        }
+      },
+      "required": [
+        "customerId",
+        "items"
+      ],
+      "additionalProperties": false,
+      "title": "PostSaleProduct",
       "type": "object"
     }
   },

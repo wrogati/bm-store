@@ -12,3 +12,5 @@ for more details see the Docker documentation: https://docs.docker.com/engine/in
 In the root directory  run:
 ``docker-composer up -d``
 
+####To run server and create a documentation with swagger, run:
+``npm run local-swagger``
